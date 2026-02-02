@@ -1,170 +1,287 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Currículum Francisco Kellner</title>
+    <title>Francisco Kellner | Currículum</title>
+
+    <!-- Bootstrap -->
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css"
     />
+
+    <!-- Font Awesome -->
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
 
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        color: #333;
-      }
-      header {
-        text-align: center;
-        background-image: url("./code.JPG");
-        background-size: cover;
-        background-attachment: fixed;
-        position: relative;
-        color: white;
-      }
-      header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-        z-index: 1;
+      :root {
+        --primary: #0d6efd;
+        --dark: #0b1320;
+        --gray: #6c757d;
+        --light-bg: #f5f7fa;
       }
 
-      header * {
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--light-bg);
+        color: #333;
+      }
+
+      .main-container {
+        max-width: 1000px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 40px;
+        border-radius: 18px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      /* HERO */
+      header {
         position: relative;
-        z-index: 2;
+        background:
+          linear-gradient(rgba(11, 19, 32, 0.75), rgba(11, 19, 32, 0.85)),
+          url("./code.JPG") center/cover no-repeat;
+        padding: 80px 20px;
+        border-radius: 16px;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 50px;
       }
-      .container {
-        background-color: #fff;
-        padding: 30px;
-        margin: 30px auto;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        max-width: 900px;
-      }
-      h1 {
-        color: #bac9d3;
-        font-weight: bold;
-      }
-      h2,
-      h3 {
-        color: #004085;
-        font-weight: bold;
-      }
-      a {
-        text-decoration: none;
-        color: white;
-      }
-      img {
-        margin: 5px;
-        width: 100px;
+
+      header img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
         border-radius: 50%;
-        border: 1px, white, solid;
-      }
-      .section-title {
-        border-bottom: 2px solid #004085;
+        border: 4px solid rgba(255, 255, 255, 0.8);
         margin-bottom: 15px;
-        padding-bottom: 5px;
       }
-      .info {
-        font-size: 14px;
+
+      header h1 {
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+
+      header .info {
+        color: #d1d5db;
+        font-size: 0.95rem;
+      }
+
+      header a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      header a:hover {
+        text-decoration: underline;
+      }
+
+      /* SECTIONS */
+      section {
+        margin-bottom: 45px;
+      }
+
+      .section-title {
+        font-weight: 700;
+        font-size: 1.5rem;
         margin-bottom: 20px;
+        position: relative;
+        color: var(--dark);
       }
-      .info p {
-        margin: 0;
+
+      .section-title::after {
+        content: "";
+        width: 55px;
+        height: 3px;
+        background: var(--primary);
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        border-radius: 3px;
       }
-      .profile {
-        margin-bottom: 20px;
-      }
-      .skills,
-      .education,
-      .experience,
-      .certifications {
-        margin-bottom: 30px;
-      }
+
       ul {
-        padding-left: 20px;
+        padding-left: 18px;
       }
+
+      ul li {
+        margin-bottom: 10px;
+      }
+
       footer {
         text-align: center;
-        font-size: 14px;
-        color: #777;
-        padding: 20px;
+        margin-top: 40px;
+        font-size: 0.9rem;
+        color: var(--gray);
       }
-      i {
-        color: gray;
+
+      footer a {
+        color: var(--primary);
+        margin-left: 10px;
+      }
+
+      .skill-group {
+        margin-bottom: 12px;
+      }
+
+      .skill-pill {
+        display: inline-block;
+        background: #eef2ff;
+        color: #1e3a8a;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin: 4px 6px 4px 0;
+        transition: all 0.2s ease;
+      }
+
+      .skill-pill:hover {
+        background: #0d6efd;
+        color: #fff;
+        transform: translateY(-1px);
       }
     </style>
   </head>
+
   <body>
-    <div class="container">
-      <!-- Encabezado -->
-      <header class="text-center">
-        <img src="./Foto.jpg" class="rounded-circle" alt="foto" />
+    <div class="main-container">
+      <!-- ENCABEZADO -->
+      <header>
+        <img src="./Foto.jpg" alt="Foto de Francisco Kellner" />
         <h1>Francisco Kellner</h1>
         <p class="info">
           <strong>Email:</strong> kellner.francisco@gmail.com |
           <strong>Teléfono:</strong>
-          <a href="https://Wa.me/+59899075808"> 099075808 |</a>
+          <a href="https://wa.me/59899075808">099075808</a> |
           <strong>Ubicación:</strong> Montevideo
         </p>
       </header>
 
-      <!-- Perfil Profesional -->
+      <!-- PERFIL PROFESIONAL -->
       <section class="profile">
         <h2 class="section-title">Perfil Profesional</h2>
         <p>
-          Analista Programador y entusiasta de las tecnologías de la información
-          con preparación en lenguajes de programación como Java, C#, Python y
-          tecnologías como Angular, React, Bootstrap, SpringBoot y .Net.
+          Desde 2021, luego de cursar Jóvenes a Programar, decidí dar un vuelco
+          en mi carrera laboral y desempeñarme en el mundo que acababa de
+          descubrir. A pesar de siempre estar vinculado a la tecnología, el
+          desarrollo colmó mis expectativas y direccioné mis esfuerzos hacia él.
         </p>
         <p>
-          Participante en proyectos interdisciplinarios nacionales e
-          internacionales, combinando habilidades técnicas con liderazgo y
-          resolución de problemas.
+          Actualmente soy egresado de la carrera Analista TI de la Universidad
+          ORT y me encuentro en la búsqueda de una nueva experiencia para
+          continuar en este camino de continuo aprendizaje.
         </p>
       </section>
 
-      <!-- Habilidades -->
+      <!-- HABILIDADES -->
       <section class="skills">
         <h2 class="section-title">Habilidades</h2>
+
         <ul>
-          <li><strong>Lenguajes de Programación:</strong> Python, Java, C#</li>
           <li>
-            <strong>Desarrollo:</strong> HTML, CSS, Bootstrap, React, Angular,
-            Ionic, .NET, Spring Boot
+            <strong>Lenguajes de Programación:</strong>
+            <div class="skill-group">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">Java</span>
+              <span class="skill-pill">C#</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">TypeScript</span>
+            </div>
           </li>
-          <li><strong>Deploy:</strong> AWS, Azure, Somee</li>
-          <li><strong>Control de Versiones:</strong> GitHub, GitLab</li>
+
           <li>
-            <strong>Fotogrametría y Cartografía:</strong> PIX4Dmapper, Agisoft
-            Metashape, ArcGis, QGis
+            <strong>Desarrollo:</strong>
+            <div class="skill-group">
+              <span class="skill-pill">HTML</span>
+              <span class="skill-pill">CSS</span>
+              <span class="skill-pill">Bootstrap</span>
+              <span class="skill-pill">React</span>
+              <span class="skill-pill">Angular</span>
+              <span class="skill-pill">Ionic</span>
+              <span class="skill-pill">.NET</span>
+              <span class="skill-pill">Spring Boot</span>
+            </div>
           </li>
+
           <li>
-            <strong>Otros:</strong> Operación de Drones (nivel avanzado), Diseño
-            con Canva, Office
+            <strong>Deploy:</strong>
+            <div class="skill-group">
+              <span class="skill-pill">AWS</span>
+              <span class="skill-pill">Azure</span>
+              <span class="skill-pill">Docker</span>
+              <span class="skill-pill">Terraform</span>
+              <span class="skill-pill">Somee</span>
+            </div>
           </li>
-          <li><strong>Idiomas:</strong> Ingles nivel B2</li>
+
+          <li>
+            <strong>Control de Versiones:</strong>
+            <div class="skill-group">
+              <span class="skill-pill">GitHub</span>
+              <span class="skill-pill">GitLab</span>
+            </div>
+          </li>
+
+          <li>
+            <strong>Fotogrametría y Cartografía:</strong>
+            <div class="skill-group">
+              <span class="skill-pill">PIX4Dmapper</span>
+              <span class="skill-pill">Agisoft Metashape</span>
+              <span class="skill-pill">ArcGIS</span>
+              <span class="skill-pill">QGIS</span>
+            </div>
+          </li>
+
+          <li>
+            <strong>Otros:</strong> Operación de Drones, Diseño
+            <div class="skill-group">
+              <span class="skill-pill">Drones</span>
+              <span class="skill-pill">Canva</span>
+              <span class="skill-pill">Office</span>
+            </div>
+          </li>
+
+          <li>
+            <strong>Idiomas:</strong>
+            <div class="skill-group">
+              <span class="skill-pill">Español</span>
+              <span class="skill-pill">Inglés</span>
+            </div>
+          </li>
         </ul>
       </section>
-      <!-- Educación -->
+
+      <!-- EDUCACIÓN -->
       <section class="education">
         <h2 class="section-title">Educación</h2>
         <ul>
           <li>
-            <strong>Analista en TI:</strong> Universidad ORT (2023 - Actualidad,
-            realizando electiva DevOps)
+            <strong>Analista en TI, electiva DevOps:</strong> Universidad ORT
+            (2023 - 2025)
           </li>
           <li>
             <strong>Analista Programador:</strong> Universidad ORT (2023 - 2025)
           </li>
+          <li><strong>Analista GENEXUS Jr:</strong> GX training (2025)</li>
+          <li>
+            <strong>Ejercicio "Escudo virtual 3.0":</strong> Unidad de
+            Ciberdefensa del Ejército (2024)
+          </li>
+          <li><strong>Python TOTAL:</strong> Udemy (2024)</li>
+          <li><strong>GitFlow en Gitlab y Github:</strong> Udemy (2024)</li>
+          <li><strong>Desarrollo Web:</strong> Ceibal (2021)</li>
           <li>
             <strong>Tecnólogo en Cartografía:</strong> Facultad de Ingeniería
             (2017 - 2021)
@@ -174,66 +291,87 @@
           </li>
         </ul>
       </section>
-      <!-- Experiencia Profesional -->
+
+      <!-- EXPERIENCIA -->
       <section class="experience">
         <h2 class="section-title">Experiencia Profesional</h2>
         <ul>
           <li>
-            <strong>Ayudante de Dirección</strong> - Centro de Altos Estudios
-            Nacionales <br />
-            <em>Actualidad</em>
-            <p>Tareas administrativas y de gestión.</p>
+            <strong>Desarrollo</strong> - Freelance <br />
+            <em>Ene. 2024 – Actualidad</em>
+            <ul>
+              <li>
+                Desarrollo integral de proyectos web y de software, desde la
+                planificación hasta la implementación.
+              </li>
+              <li>
+                Aplicación de conocimientos adquiridos en la carrera de Analista
+                TI en desafíos académicos y proyectos reales.
+              </li>
+              <li>
+                Creación de un sistema de gestión de maquinaria para el Arma de
+                Ingenieros del Ejército Nacional, optimizando procesos internos.
+              </li>
+            </ul>
           </li>
+
           <li>
-            <strong>Docente</strong> <br />
-            <em>Feb. 2012 – Actualidad</em>
-            <p>
-              Cursos en Producción Cartográfica y Sistemas de Información
-              Geográfica (SIG).
-            </p>
+            <strong>Docente</strong> - Ejército Nacional <br />
+            <em>Feb. 2012 – Ene. 2026</em>
+            <ul>
+              <li>
+                Impartiendo cursos en Producción Cartográfica y Sistemas de
+                Información Geográfica (SIG) en la Facultad de Ingeniería y el
+                Ejército Nacional.
+              </li>
+            </ul>
           </li>
+
           <li>
-            <strong>Jefe de Sección de Ingenieros</strong> - United Nations,
-            Haití <br />
-            <em>Set. 2012 – Jul. 2013</em>
-            <p>
-              Gestion de personal y recursos para mantenimiento de
-              infraestructura en la base del Batallón Uruguay VI.
-            </p>
+            <strong>Oficial del Ejército Nacional</strong> - Ejército Nacional
+            <br />
+            <em>Dic. 2009 – Ene. 2026</em>
+            <ul>
+              <li>
+                Trayectoria basada en trabajo en equipo, responsabilidad y
+                orientación a resultados.
+              </li>
+              <li>
+                Liderazgo de equipos multidisciplinarios en proyectos de
+                relevamiento y análisis de datos mediante tecnologías GNSS,
+                estaciones totales y drones.
+              </li>
+              <li>
+                Fuerte capacidad de adaptación a nuevas herramientas
+                tecnológicas y metodologías de trabajo.
+              </li>
+              <li>
+                Representante por el Ejército en el Grupo de trabajo de Limites
+                Administrativos.
+              </li>
+            </ul>
           </li>
         </ul>
       </section>
 
-      <!-- Certificaciones -->
-      <section class="certifications">
-        <h2 class="section-title">Certificaciones</h2>
-        <ul>
-          <li>
-            Ejercicio Escudo Virtual 3.0 – Unidad de Ciberdefensa del Ejército
-            (2024)
-          </li>
-          <li>Programador Web – ORT (2024)</li>
-          <li>GitFlow en GitLab y GitHub – Udemy (2024)</li>
-          <li>Python TOTAL – Udemy (2024)</li>
-        </ul>
-      </section>
-      <!-- Referencias -->
+      <!-- REFERENCIAS -->
       <section>
         <h2 class="section-title">Referencias</h2>
+        <p>
+          TteCnel. Mag. Bruno Canosa – Militar, Instituto Geográfico Militar
+        </p>
         <p>Ing. Juan Dibot – Desarrollador, Instituto Geográfico Militar</p>
         <p>
           Lic. Patricia Catz – OPP, Grupo de Infraestructura de Datos Espaciales
         </p>
       </section>
 
-      <!-- Footer -->
+      <!-- FOOTER -->
       <footer>
-        <p>
-          © 2025 Francisco Kellner |
-          <a href="https://linkedin.com/in/francisco-kellner" target="_blank"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-        </p>
+        © 2025 Francisco Kellner
+        <a href="https://linkedin.com/in/francisco-kellner" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
       </footer>
     </div>
   </body>
